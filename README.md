@@ -1,4 +1,4 @@
-# 🚀 Portfolio Front-end - Ariane Pessoa (Ainda não finalizado)
+# 🚀 Portfolio Front-end - Ariane Pessoa (Em desenvolvimento)
 
 Aplicação Web moderna desenvolvida em **React** para exibir minha jornada profissional, projetos e habilidades técnicas. O projeto utiliza **Tailwind CSS** para estilização e consome uma API personalizada em NestJS.
 
