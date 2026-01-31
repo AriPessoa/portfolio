@@ -3,7 +3,11 @@ import CodeIcon from '@mui/icons-material/Code';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import { use, useEffect, useState } from 'react';
 import api from '../services/api';
-import { SiFigma, SiGit, SiPostman, SiVsco } from 'react-icons/si';
+import { SiFigma, SiGit, SiPostman, SiVite, SiVitess } from 'react-icons/si';
+import { VscAzureDevops, VscVscode } from 'react-icons/vsc';
+import { FaBootstrap } from 'react-icons/fa';
+import { DiVisualstudio } from 'react-icons/di';
+import { RiGeminiFill } from 'react-icons/ri';
 
 interface Profile {
   name: string;
@@ -19,7 +23,12 @@ export function About() {
     { name: 'Figma', icon: <SiFigma />, color: 'text-white' },
     { name: 'Git', icon: <SiGit />, color: 'text-white' },
     { name: 'Postman', icon: <SiPostman />, color: 'text-white' },
-    { name: 'VS Code', icon: <SiVsco />, color: 'text-white' },
+    { name: 'VS Code', icon: <VscVscode />, color: 'text-white' },
+    { name: 'Visual Studio', icon: <DiVisualstudio />, color: 'text-white' },
+    { name: 'Vite', icon: <SiVitess />, color: 'text-white' },
+    { name: 'Azure DevOps', icon: <VscAzureDevops />, color: 'text-white' },
+    { name: 'Bootstrap', icon: <FaBootstrap />, color: 'text-white' },
+    { name: 'Gemini', icon: <RiGeminiFill />, color: 'text-white' },
   ];
 
   console.log(api.get('/profile'));
@@ -50,12 +59,14 @@ export function About() {
             <p className="mt-4 text-slate-400 leading-relaxed">
               {profile.bio}
             </p>
-            <button
-              onClick={() => window.open("/curriculo.pdf", "_blank")}
-              className="mt-8 rounded-lg border border-sky-400 px-6 py-2 text-sky-400 hover:bg-sky-400 hover:text-white transition-all shadow-lg shadow-sky-400/10"
+            <a
+              href="/public/Currículo – Ariane Pessoa Da Silva.pdf"
+              download
+              className="mt-8 inline-block rounded-lg border border-sky-400 px-6 py-2 text-sky-400 hover:bg-sky-400 hover:text-white transition-all shadow-lg shadow-sky-400/10"
             >
               Baixar Currículo (PDF)
-            </button>
+            </a>
+            {/* <p className="text-sm text-slate-500 mt-2">Coloque seu arquivo PDF em <strong>public/resume.pdf</strong> para que este link funcione.</p> */}
           </div>
 
           <div className="space-y-8">
@@ -111,7 +122,13 @@ export function About() {
             </div>
           </div> */}
 
-          {/* <div className="flex gap-4">
+
+
+        </div>
+
+        <div className='mb-12 mt-24'>
+          <h2 className="text-3xl font-bold text-white mb-12">Ferramentas que utilizo</h2>
+          <div className="flex gap-4">
             {tools.map((tool) => (
               <Tooltip title={tool.name} key={tool.name} arrow>
                 <div className="w-32 h-24 bg-slate-800/40 border border-white/5 rounded-[2rem] flex items-center justify-center hover:bg-slate-700/50 transition-all cursor-pointer group">
@@ -121,7 +138,7 @@ export function About() {
                 </div>
               </Tooltip>
             ))}
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
